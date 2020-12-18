@@ -1,6 +1,82 @@
-$primary-color: #444;
+@import 'config'; //where all the variables and mixins are held
+
+// the * selects everything
+// this makes it so padding does not affect width/height of elements
+* {
+  box-sizing: border-box;
+}
 
 body {
-  background: $primary-color;
+  @include background;  
+  background: $primary-color; //primary-color is a variable up top
   color: #fff;
+  height: 100%; //body always takes up whole sceen
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; //space between lines
+}
+
+// Headings
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400; //thinkness of the font
+
+  //the '&' makes it so the lg-heading class is the class for the <h1> element, not embedded within
+  &.lg-heading {
+    font-size: 6rem; //rem units is multiplier of <html> tag's font size, 16px default
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem; //gives <h2> content some padding that will be a different color below
+    //lighten is a sass function taking paramerters(color, factor to lighten)
+    background: rgba(lighten($primary-color, 2), 0.5); //rgba allows for changing opacity
+  }
+}
+
+// Links
+a {
+    color: #fff;
+    text-decoration: none; //removes underline from links
+}
+
+// Header
+header {
+    position: fixed; //keeps header at the top even if we have to scroll
+    z-index: 2; //how close to you element is, bigger # means closer
+    width: 100%; //makes header stretch across screen 
+}
+
+.text-secondary {
+    color: $secondary-color; //makes last name secondary color
+}
+
+main {
+    padding: 4rem;
+    height: 100%;
+
+    //nested 'icons' class within <main> element
+    .icons {
+       margin-top: 1rem;
+       
+       a {
+           padding: 0.4rem; //each icon is within a <a> element
+
+           &:hover {
+               color: $secondary-color; //makes icon turn secondary-color when mouse hovers over
+               @include easeOut(); //transition fading in color when mouse hovers over, see mixin 
+           }
+       }
+    }
+
+    //this selects id=home from <main>
+    &#home {
+        overflow: hidden; //removes scroll bars from home page
+        h1 {
+            margin-top: 20vh; //viewport height unit, takes about 20% of height here 
+        }
+    }
 }
