@@ -14,6 +14,8 @@ let showMenu = false; //variable for whether menu is open(true) or closed(false)
 
 menuBtn.addEventListener('click', toggleMenu);
 
+//this func adds the class close/show to elements making up the nav menu
+//when class close/show gets added, a menu overlay opens when menu button is clicked 
 function toggleMenu() {
     if(!showMenu) {
         menuBtn.classList.add('close');
