@@ -36,3 +36,29 @@ $background-opacity: 0.75;
         }
    }      
 }
+
+// Mendia query Mixins to make site responsive to different screen sizes
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        //and CSS on here will only apply if the screen is 500px or less
+        @content; //applies to any content within function when it's called 
+    }  
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }  
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }  
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }  
+}

@@ -1,5 +1,6 @@
 @import 'config'; //where all the variables and mixins are held
 @import 'menu'; //styling for the menu button
+@import 'mobile'; //styling for mobile responsiveness 
 
 // the * selects everything
 // this makes it so padding does not affect width/height of elements
@@ -8,7 +9,7 @@
 }
 
 body {
-  @include background();  
+  @include background;  
   background: $primary-color; //primary-color is a variable up top
   color: #fff;
   height: 100%; //body always takes up whole sceen
@@ -68,7 +69,7 @@ main {
 
            &:hover {
                color: $secondary-color; //makes icon turn secondary-color when mouse hovers over
-               @include easeOut(); //transition fading in color when mouse hovers over, see mixin 
+               @include easeOut; //transition fading in color when mouse hovers over, see mixin 
            }
        }
     }
