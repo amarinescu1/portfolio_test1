@@ -1,0 +1,43 @@
+//Menu button
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut();
+
+    //the 3 button lines
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include easeOut; 
+    }
+
+    //animation rotating menu button in X with menu lines when clicked (class=closed)
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            // Line 1 - Rotate 
+            &:nth-child(1) {        //using nth child selector
+                transform: rotate(45deg) translate(5px, 5px);
+                background-color: white;
+            }
+
+            // Line 2 - Hide
+            &:nth-child(2) {        //using nth child selector
+                opacity: 0;
+            }
+
+            // Line 3 - rotate
+            &:nth-child(3) {        //using nth child selector
+                transform: rotate(-45deg) translate(7px, -6px);
+                background-color: white;
+            }
+        }
+    }
+
+}
