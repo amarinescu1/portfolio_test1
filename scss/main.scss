@@ -1,6 +1,6 @@
 @import 'config'; //where all the variables and mixins are held
 @import 'menu'; //styling for the menu button
-@import 'mobile'; //styling for mobile responsiveness 
+
 
 // the * selects everything
 // this makes it so padding does not affect width/height of elements
@@ -9,9 +9,9 @@
 }
 
 body {
-  @include background;  
+  @include background();  
   background: $primary-color; //primary-color is a variable up top
-  color: #fff;
+  color: set-text-color($primary-color); //text color gets set to either white or black depending on lightness of $primary-color 
   height: 100%; //body always takes up whole sceen
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -58,7 +58,7 @@ header {
 
 main {
     padding: 4rem;
-    height: 100%;
+    min-height: calc(100vh - 60px); //creates sticky footer by making main content take up 100vh - heigh of footer (60px)
 
     //nested 'icons' class within <main> element
     .icons {
@@ -69,7 +69,7 @@ main {
 
            &:hover {
                color: $secondary-color; //makes icon turn secondary-color when mouse hovers over
-               @include easeOut; //transition fading in color when mouse hovers over, see mixin 
+               @include easeOut(); //transition fading in color when mouse hovers over, see mixin 
            }
        }
     }
@@ -82,3 +82,55 @@ main {
         }
     }
 }
+
+//Gird layout for About page
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 
+  'bioimage bio bio' //class bio stretches across 2 sections on grid
+  'job1 job2 job3';
+  grid-template-columns: repeat(3, 1); //means repeat columns 3x at 1 fr
+
+  .bio-image {
+    grid-area: bioimage; // grid-area matches name in grid-layout above 
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+  
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  
+  .job1 {
+    grid-area: job1;
+  }
+  
+  .job2 {
+    grid-area: job2;
+  }
+  
+  .job3 {
+    grid-area: job3;
+  }
+  
+  .job { //background box for jobs
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+//Footer 
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import 'mobile'; //styling for mobile responsiveness - want at bottom to run after page loads
+

@@ -5,7 +5,7 @@
 
 // Desktops and Laptops
 @include mediaLg {
-    
+  
 }
 
 // Tablets and small Laptops
@@ -47,6 +47,17 @@
             width: 150px;
             height: 150px;
         }
+    }
+
+    .about-info {
+        grid-template-areas: //makes grid-items on About page stack for small screens 
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+        grid-template-columns: 1fr;
     }
 }
 

@@ -12,7 +12,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-color($primary-color); //changes btn-line color depending on lightness of $primary-color
         @include easeOut(); 
     }
 
@@ -55,7 +55,7 @@
 
     &-branding, &-nav {
         display: flex; //using flexbox to creat a column
-        flex-flow: column wrap;
+        flex-flow: column wrap; 
         align-items: center;
         justify-content: center; //aligns flex items at center of container
         float: left; //moves elements to the left on screen 
@@ -81,7 +81,7 @@
     //Branding Side (with portrait photo) 
     &-branding {
         background: $primary-color;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0); //initially out of screen to the right 
         @include easeOut;
 
         &.show {
@@ -123,7 +123,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        color: #fff;
+        color: set-text-color($primary-color); //change menu link color depending on lightness of $primary-color
         text-decoration: none;
         @include easeOut;
 
