@@ -123,6 +123,49 @@ main {
   }
 }
 
+// Work/Projects - grid items
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); //columns repeat 3x each at 1fr
+
+  img {
+    width: 100%; //makes images 100% of their container
+    border: 3px #fff solid;
+
+    &:hover { //color change transition when mouse hovers over img
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles - not embedded so buttons can be reused
+.btn { //inheritance class which will be expanded - no html elements have class=btn
+  display: block; //on own line and go all the way across container 
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+// Work Page buttons: inheritance from .btn class above using @extend
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff; 
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
 //Footer 
 #main-footer {
   text-align: center;
