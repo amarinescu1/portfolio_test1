@@ -141,6 +141,32 @@ main {
   }
 }
 
+// Contact Page: flex display  
+.boxes {
+  display: flex;
+  flex-wrap: wrap; //content will stack(wrap) when screen gets smaller 
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem; //1.5rem for top and bottom, 2.5rem for sides 
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem; //on hover this effect causes element to shrink 
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
 // Button Styles - not embedded so buttons can be reused
 .btn { //inheritance class which will be expanded - no html elements have class=btn
   display: block; //on own line and go all the way across container 

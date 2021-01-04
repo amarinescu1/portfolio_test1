@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="https://kit.fontawesome.com/be399c7c2a.js" crossorigin="anonymous"></script>
   <!-- The above script allows the use of icons and fonts from fontawesome.com-->
-  <title>Alex Marinescu's Portfolio</title>
+  <title>Contact Me</title>
 </head>
 
-<body id="bg-img"> <!--this id is for the background image covering whole body-->
+<body> 
   <header> <!--contains menu botton and navigation links as a list-->
 
     <div class="menu-btn"> <!--This div will be for the square menu button-->
@@ -24,12 +24,12 @@
           <div class="portrait"></div>
       </div>
       <ul class="menu-nav">
-        <li class="nav-item current"> <!--added current class since this is html for the home page-->
+        <li class="nav-item"> 
           <a href="index.html" class="nav-link">
             Home
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"> 
           <a href="about.html" class="nav-link">
             About Me
           </a>
@@ -39,42 +39,41 @@
             My Work
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item current"> <!--added current class since this is html for contact page-->
           <a href="contact.html" class="nav-link">
             How To Reach Me
           </a>
         </li>
       </ul>
     </nav>
-
   </header>
 
-  <main id="home"> <!--main container for content of the home page-->
-
+  <main id="contact"> <!--main container for content of the contact page-->
     <h1 class="lg-heading">
-      Alex <span class="text-secondary">Marinescu</span> <!--text-secondary is sass variable
-      which makes the last name a different color from first name-->
+      Contact <span class="text-secondary">Me</span> 
     </h1> 
     <h2 class="sm-heading">
-      Web Developer And Programmer 
+      This is how you can reach me... 
     </h2>
-
-    <div class="icons"> <!--This div is for the icon bottoms linking to social media acts-->
-      <a href="#!"> <!--links currently go nowhere, add link to act-->
-        <i class="fab fa-twitter fa-2x"></i> <!--the <i> element creates a twitter icon, fa-2x makes icon larger-->
-      </a>
-      <a href="#!">
-        <i class="fab fa-facebook fa-2x"></i> <!--the <i> element creates a fb icon-->
-      </a>
-      <a href="#!">
-        <i class="fab fa-linkedin fa-2x"></i> <!--the <i> element creates a linked icon-->
-      </a>
-      <a href="#!">
-        <i class="fab fa-github fa-2x"></i> <!--the <i> element creates github icon-->
-      </a>
+    <div class="boxes"> <!--!!Class containing all the flex-box items on contanct page!!-->
+        <div>
+           <span class="text-secondary">Email:</span> 
+           amarinescu2013@gmail.com
+        </div> 
+        <div>
+            <span class="text-secondary">Phone:</span> 
+            (555) 555-5555
+        </div> 
+        <div>
+            <span class="text-secondary">Address:</span> 
+            50 Main St Boston, MA 11111
+        </div>
     </div>
-
   </main>
+
+  <footer id="main-footer"> 
+      Copyright &copy; 2020
+  </footer>
 
   <!--Link to Javascript file-->
   <script src="js/main.js"></script>
